@@ -1,0 +1,17 @@
+/*
+ 类似css，scss支持import命令
+ css import命令在每次调用时都会额外调地用http请求
+ scss import命令将文件包含在css中，不需要额外调地用http请求
+ _variables 下划线开头的文件告诉sass不要将其编译到css文件，当作模块导入，不能单独使用。
+ 在导入语句不需要添加下划线
+*/
+//config
+@import "variables" ;
+//layout
+@import "reboot";
+//mixin
+@import "mixin";
+//button
+@import "../components/Button/style";
+//menu
+@import "../components/Menu/style";

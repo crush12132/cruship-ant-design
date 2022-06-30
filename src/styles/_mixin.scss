@@ -1,0 +1,35 @@
+//用于定义可重复使用的样式，避免了使用无语意的 class
+@mixin button-size($padding-y,$padding-x,$font-size,$border-radius){
+   padding:$padding-y $padding-x;
+   font-size:$font-size;
+   border-radius:$border-radius;
+}
+
+@mixin button-style(
+    $background,
+    $border,
+    $color,
+    $hover-background:lighten($background,7.5%),
+    $hover-border:lighten($border,10%),
+    $hover-color:$color,
+    ){
+        color: $color;
+        background:$background;
+        border-color:$border;
+        &:hover{
+            color:$hover-color;
+            background:$hover-background;
+            border-color: $hover-border;
+        };
+        &:focus,&.focus{
+            outline:0;
+            color:$hover-color;
+            background:$hover-background;
+            border-color: $hover-border;
+        };
+        &:disabled,&.disabled{
+            color:$color;
+            background:$background;
+            border-color: $border;
+        }
+}
